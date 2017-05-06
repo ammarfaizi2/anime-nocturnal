@@ -26,6 +26,12 @@ class home extends Controller
 	*/
 	public function index()
 	{
-		
+		$login = new \App\Models\Login();
+        if ($login->login_status()) {
+            $this->load->view('home');
+        } else {
+         	header('location:'.base_url().'/login?ref=home');
+        }
+        die;
 	}
 }
