@@ -33,6 +33,7 @@ class Database
             $prepare.=':'.$key.',';
             $value[':'.$key] = $val;
         }
+        #var_dump("INSERT INTO {$table} (".rtrim($fields, ',').") VALUES (".rtrim($prepare, ',').")",$value);
         return $this->_db->prepare("INSERT INTO {$table} (".rtrim($fields, ',').") VALUES (".rtrim($prepare, ',').")")->execute($value);
     }
     public function get($table)
