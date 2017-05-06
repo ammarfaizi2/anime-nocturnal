@@ -63,11 +63,11 @@ class Register extends Model
         return trim(strtolower($str));
     }
     public function validate_input()
-    {   
+    {
         $username   = self::vtr($_POST['username']);
         $email      = self::vtr($_POST['email']);
         $phone      = self::vtr($_POST['phone']);
-        if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->alert = "E-Mail salah !";
             return false;
         } elseif (strlen($username)<4) {
@@ -76,7 +76,7 @@ class Register extends Model
         } elseif (strlen($username)>64) {
             $this->alert = "Username terlalu panjang, maksimal 64 digit !";
             return false;
-        } elseif ($this->is_exists_on_db('account_data', 'username', $username) {
+        } elseif ($this->is_exists_on_db('account_data', 'username', $username)) {
             $this->alert = "Username sudah digunakan anggota lain !";
             return false;
         } elseif ($this->is_exists_on_db('account_data', 'email', $email)) {
@@ -95,8 +95,8 @@ class Register extends Model
     private function generate_userid()
     {
         do {
-            $userid = rand(1,9).rstr(15, null, '1234567890');
-        } while ($this->is_exists_on_db('account_data', 'userid', $userid);
+            $userid = rand(1, 9).rstr(15, null, '1234567890');
+        } while ($this->is_exists_on_db('account_data', 'userid', $userid));
         return $userid;
     }
     public function register_to_db()
