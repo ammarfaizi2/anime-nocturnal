@@ -31,6 +31,7 @@ class register extends Controller
         if ($login->login_status()) {
             $this->load->error(404);
         } else {
+        	unset($login);
         	$register = new \App\Models\Register();
          	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token()));
         }
@@ -38,10 +39,11 @@ class register extends Controller
 	public function action()
 	{
 		$register = new \App\Models\Register();
+		$register->save_post();
 		if ($register->check_token()) {
 			
 		} else {
-			header("location:".base_url().'/register?ref=err_token');
+			$this->error_token();
 		}
 	}
 	private function tanggal_lahir()
@@ -63,5 +65,21 @@ class register extends Controller
 			$a.='<option>'.($i).'</option>';
 		}
 		return $a.'</select>';
+	}
+
+	private function error_token()
+	{
+		header('location:'.base_url().'/register?ref=err_token');
+		?>
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<title>Error Token !</title>
+		</head>
+		<body>
+			<h1>Error Token !</h1>
+		</body>
+		</html>
+		<?php
 	}
 }
