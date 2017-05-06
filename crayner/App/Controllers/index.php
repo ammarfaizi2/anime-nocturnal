@@ -19,6 +19,7 @@ class index extends Controller
         $this->load->helper('url');
         $this->load->helper('rstr');
         $this->load->helper('teacrypt');
+        $this->load->helper('cookiemgr');
     }
     
     /**
