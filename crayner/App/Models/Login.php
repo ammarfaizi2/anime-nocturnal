@@ -50,7 +50,7 @@ class Login extends Model
 					'userid'	=>$r['userid'],
 					'session'	=>$sess,
 					'login_at'	=>(date('Y-m-d H:i:s',$now)),
-					'expired'	=>(date('Y-m-d H:i:s',$now+$exp))
+					'expired_at'=>(date('Y-m-d H:i:s',$now+$exp))
 				));
 	    	stck(array(
 					'id'	=>array($r['userid'],$exp),
