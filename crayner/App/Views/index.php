@@ -1,2 +1,4 @@
 <?php
-print $aa;
+/**
+* silent is golden
+*/
