@@ -62,6 +62,21 @@ class Login extends Model
 
     public function login_status()
     {
+        if (isset($_COOKIE['id'],$_COOKIE['ukey'],$_COOKIE['sess'])) {
+        	$sess = teadecrypt($_COOKIE['sess'],teadecrypt($_COOKIE['ukey'],'redangel'));
+        	$st = $this->db->preapre("SELECT `session` FROM `login_session` WHERE `userid`=:userid AND `session`=:session LIMIT 1;");
+        	$st->execute(array(
+        			':userid'	=> $_COOKIE['id'],
+        			':session'	=> $_COOKIE['session']
+        		));
+        	$r = $st->fetch(PDO::FETCH_NUM);
+        	$st = null;
+        	if ($r) {
+        		return true;
+        	} else {
+        		return false;
+        	}
+        }
         return false;
     }
 }
