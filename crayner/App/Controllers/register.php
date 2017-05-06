@@ -36,19 +36,19 @@ class register extends Controller
 
 	private function tanggal_lahir()
 	{
-		$a = '<select name="tanggal">';
+		$a = '<select required name="tanggal"><option></option>';
 		for ($i=1; $i <= 31; $i++) { 
 			$a.='<option>'.$i.'</option>';
 		}
 		$a .= '</select>';
-		$a.= '<select name="bulan">';
+		$a.= '<select required name="bulan"><option></option>';
 		$bln = array('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
 		$q = 1;
 		foreach ($bln as $val) {
 			$a.='<option value="'.($q++).'">'.$val.'</option>';
 		}
 		$a.='</select>';
-		$a.= '<select name="tahun">';
+		$a.= '<select required name="tahun"><option></option>';
 		for ($i=(int)date('Y');$i>=1965;$i--) { 
 			$a.='<option>'.($i).'</option>';
 		}
