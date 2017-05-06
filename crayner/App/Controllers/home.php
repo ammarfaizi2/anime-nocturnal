@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use System\Controller;
+
 /**
 *
 *		Created by icetea
@@ -9,30 +10,30 @@ use System\Controller;
 */
 class home extends Controller
 {
-	/**
-	* Controller constructor
-	*/
-	public function __construct()
-	{
-		parent::__construct();
+    /**
+    * Controller constructor
+    */
+    public function __construct()
+    {
+        parent::__construct();
         $this->load->helper('url');
         $this->load->helper('rstr');
         $this->load->helper('assets');
         $this->load->helper('teacrypt');
         $this->load->helper('cookiemgr');
-	}
-	
-	/**
-	* Default method
-	*/
-	public function index()
-	{
-		$login = new \App\Models\Login();
+    }
+    
+    /**
+    * Default method
+    */
+    public function index()
+    {
+        $login = new \App\Models\Login();
         if ($login->login_status()) {
             $this->load->view('home');
         } else {
-         	header('location:'.base_url().'/login?ref=home');
+            header('location:'.base_url().'/login?ref=home');
         }
         die;
-	}
+    }
 }

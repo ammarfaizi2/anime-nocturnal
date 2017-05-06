@@ -2,8 +2,8 @@
 <html>
 <head>
 <?php 
-$v = function($vz,$q=0) use($ps) {
-	print ($q==1 and isset($ps[$vz])) ? $ps[$vz] : (isset($ps[$vz])?' value="'.$ps[$vz].'" ':'');
+$v = function ($vz, $q=0) use ($ps) {
+    print ($q==1 and isset($ps[$vz])) ? $ps[$vz] : (isset($ps[$vz])?' value="'.$ps[$vz].'" ':'');
 }
 ?>
 	<title>Register</title>
@@ -22,7 +22,7 @@ $v = function($vz,$q=0) use($ps) {
 					></td></tr>
 					<tr><td>Tempat Lahir</td><td>:</td><td><input <?php $v('tmplahir');?> required type="text" name="tmplahir"></td></tr>
 					<tr><td>Tanggal Lahir</td><td>:</td><td><?php print $tanggal_lahir; ?></td></tr>
-					<tr><td>Alamat</td><td>:</td><td><textarea required name="alamat"><?php $v('alamat',1);?></textarea></td></tr>
+					<tr><td>Alamat</td><td>:</td><td><textarea required name="alamat"><?php $v('alamat', 1);?></textarea></td></tr>
 					<tr><td>E-Mail</td><td>:</td><td><input <?php $v('email');?>  required type="email" name="email"></td></tr>
 					<tr><td>Nomor HP</td><td>:</td><td><input <?php $v('phone');?> required type="text" name="phone"></td></tr>
 					<tr><td colspan="3"><div class="mgt"></div></td></tr>

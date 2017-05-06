@@ -1,6 +1,6 @@
 <?php
 if (!function_exists('rstr')) {
-    function rstr($n=32, $concat='',$clean=null)
+    function rstr($n=32, $concat='', $clean=null)
     {
         if (isset($clean)) {
             $a = $clean;
