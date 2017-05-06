@@ -25,11 +25,11 @@ class index extends Controller
     */
     public function index()
     {
-        $this->load->model('Login','login');
+        $this->load->model('Login', 'login');
         if ($this->login->login_status()) {
             $this->load->view('home');
         } else {
-            $this->load->view('login',array('token'=>$this->login->token()));
+            $this->load->view('login', array('token'=>$this->login->token()));
         }
     }
 }
