@@ -16,7 +16,7 @@ class Login extends Model
 	}
 	public function token()
 	{
-		
+		return rstr();
 	}
 	public function login_status()
 	{
