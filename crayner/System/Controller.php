@@ -25,12 +25,6 @@ class Controller extends CraynerCore
         $this->load = $this;
     }
     
-    protected function model($model, $as=null)
-    {
-        $as = $as===null?$model:$as;
-        $model = "App\\Models\\{$model}";
-        $this->$as = new $model();
-    }
     private function autoload($autoload)
     {
     }
