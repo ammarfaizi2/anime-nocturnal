@@ -64,12 +64,12 @@ class Login extends Model
     {
         if (isset($_COOKIE['id'],$_COOKIE['ukey'],$_COOKIE['sess'])) {
         	$sess = teadecrypt($_COOKIE['sess'],teadecrypt($_COOKIE['ukey'],'redangel'));
-        	$st = $this->db->preapre("SELECT `session` FROM `login_session` WHERE `userid`=:userid AND `session`=:session LIMIT 1;");
+        	$st = $this->db->prepare("SELECT `session` FROM `login_session` WHERE `userid`=:userid AND `session`=:session LIMIT 1;");
         	$st->execute(array(
         			':userid'	=> $_COOKIE['id'],
-        			':session'	=> $_COOKIE['session']
+        			':session'	=> $sess
         		));
-        	$r = $st->fetch(PDO::FETCH_NUM);
+        	$r = $st->fetch(\PDO::FETCH_NUM);
         	$st = null;
         	if ($r) {
         		return true;
