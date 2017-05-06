@@ -14,7 +14,7 @@ class ConfigHandler
     public static $cf;
     public function __construct()
     {
-        require __DIR__.'/../App/Config/config.php';
+        require __DIR__.'/../../config.php';
         self::$cf = $cf;
         self::$instance = $this;
     }
@@ -28,7 +28,7 @@ class ConfigHandler
     }
     public function db()
     {
-        require __DIR__.'/../App/Config/database.php';
+        require __DIR__.'/../../database.php';
         return $cf;
     }
     public function assets($type)
