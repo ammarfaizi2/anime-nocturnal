@@ -10,7 +10,7 @@ if (isset($_COOKIE['alert'])) {
 <?php 
 $v = function ($vz, $q=0) use ($ps) {
     print ($q==1 and isset($ps[$vz])) ? $ps[$vz] : (isset($ps[$vz])?' value="'.$ps[$vz].'" ':'');
-}
+};
 if (isset($al)) {
 	?>
 	<script type="text/javascript">

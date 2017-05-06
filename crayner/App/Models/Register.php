@@ -53,9 +53,9 @@ class Register extends Model
     }
     public function is_exists_on_db($table, $field, $value)
     {
-        $st = $this->db->prepare("SELECT COUNT(`{$field}`) FROM `{table}` WHERE `{$field}`=:{$field} LIMIT 1;");
+        $st = $this->db->prepare("SELECT COUNT(`{$field}`) FROM `{$table}` WHERE `{$field}`=:{$field} LIMIT 1;");
         $st->execute(array(':'.$field=>$value));
-        $dt = $st->fetch(PDO::FETCH_NUM);
+        $dt = $st->fetch(\PDO::FETCH_NUM);
         return (bool)$dt[0];
     }
     private static function vtr($str)
@@ -107,7 +107,7 @@ class Register extends Model
             ));
         $this->db->insert('account_info', array(
                 'userid'    =>    $userid,
-                'nama'        =>    ucfirst(trim(strtolower($_POST['nama']))),
+                'nama'        =>    ucwords(trim(strtolower($_POST['nama']))),
                 'tmplahir'    =>    trim($_POST['tmplahir']),
                 'tgllahir'    =>    ($_POST['tahun'].'-'.$_POST['bulan'].'-'.$_POST['tanggal']),
                 'alamat'    =>    trim($_POST['alamat']),
