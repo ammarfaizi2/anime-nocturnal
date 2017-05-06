@@ -45,6 +45,7 @@ class register extends Controller
         if ($register->check_token()) {
             if ($register->validate_input()) {
                 $register->register_to_db();
+                header('location:'.base_url().'/register/success');
             } else {
                 stck(array('alert'=>array(teacrypt($register->get_alert(), 'redangel'),300)));
                 header('location:'.base_url().'/register?ref=reg_action&get_alert=true');
@@ -52,7 +53,7 @@ class register extends Controller
         } else {
             $this->error_token();
         }
-        die;
+        die('end of action');
     }
     private function tanggal_lahir()
     {
