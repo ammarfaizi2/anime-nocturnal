@@ -42,13 +42,16 @@ class Login extends Model
     			':user'=>$_POST['username']
     		));
     	$r = $st->fetch(\PDO::FETCH_ASSOC);
-    	if (teadecrypt($r['password'],$r['ukey'])==$_POST['password']) {
-    		print 'pass sukses';
-    		die;
-    	}
-    	$sess = rstr().$r['userid'];
-    	if ($r) {
-    		$exp = 3600*24*14;
+    	if ($r && teadecrypt($r['password'],$r['ukey'])==$_POST['password']) {
+    		$sess = rstr(72-16).$r['userid'];
+			$exp = 3600*24*14;
+			$now = time();
+			$this->db->insert('login_session',array(
+					'userid'	=>$r['userid'],
+					'session'	=>$sess,
+					'login_at'	=>(date('Y-m-d H:i:s',$now)),
+					'expired'	=>(date('Y-m-d H:i:s',$now+$exp))
+				));
 	    	stck(array(
 					'id'	=>array($r['userid'],$exp),
 					'ukey'	=>array(teacrypt($r['ukey'],'redangel'),$exp),
