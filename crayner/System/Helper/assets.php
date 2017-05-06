@@ -1,5 +1,5 @@
 <?php
-use System\Config_Handler;
+use System\ConfigHandler;
 
 if (!function_exists('js')) {
     function js($file, $abs=false)
