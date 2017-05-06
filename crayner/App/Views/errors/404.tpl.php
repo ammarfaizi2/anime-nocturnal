@@ -1,3 +1,7 @@
+<?php
+$list = array('asuna2','asuna3','bg1','bg3');
+$list = $list[rand(0,count($list)-1)];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,16 +22,14 @@
 			font-size: 64px;
 		}
 	</style>
+	<meta property="og:image" content="<?php print base_url().'/assets/img/'.($list).'.jpg'; ?>"/>
 </head>
 <body>
 <center>
-<?php
-$list = array('asuna2','asuna3','bg1','bg2','bg3');
-?>
 <a href="<?php print base_url(); ?>"><h2>Halaman Utama</h2></a>
 <h1 class="hi">404 Not Found !</h1>
 <h2>Halaman sing digolek'i mboten kepanggih</h2>
-<img class="gbr" src="<?php print base_url().'/assets/img/'.($list[rand(0,count($list)-1)]).'.jpg'; ?>">
+<img class="gbr" src="<?php print base_url().'/assets/img/'.($list).'.jpg'; ?>">
 </center>
 </body>
 </html>
