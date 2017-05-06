@@ -33,7 +33,8 @@ class register extends Controller
         } else {
         	unset($login);
         	$register = new \App\Models\Register();
-         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token(),'ps'=>$register->get_saved_post()));
+        	$this->saved_post = $register->get_saved_post();
+         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token(),'ps'=>$this->saved_post));
         }
 	}
 	public function action()
@@ -49,20 +50,39 @@ class register extends Controller
 	private function tanggal_lahir()
 	{
 		$a = '<select required name="tanggal"><option></option>';
-		for ($i=1; $i <= 31; $i++) { 
-			$a.='<option>'.$i.'</option>';
+		if (isset($this->saved_post['tanggal'])) {
+			for ($i=1; $i <= 31; $i++) { 
+				$a.='<option '.($this->saved_post['tanggal']==$i?'selected':'').'>'.$i.'</option>';
+			}
+		} else {
+			for ($i=1; $i <= 31; $i++) { 
+				$a.='<option>'.$i.'</option>';
+			}	
 		}
 		$a .= '</select>';
 		$a.= '<select required name="bulan"><option></option>';
 		$bln = array('Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
-		$q = 1;
-		foreach ($bln as $val) {
-			$a.='<option value="'.($q++).'">'.$val.'</option>';
+		$i = 1;
+		if (isset($this->saved_post['bulan'])) {
+			foreach ($bln as $val) {
+				$a.='<option value="'.($i).'" '.($this->saved_post['bulan']==$i++?'selected':'').'>'.$val.'</option>';
+			}
+		} else {
+			foreach ($bln as $val) {
+				$a.='<option value="'.($i++).'">'.$val.'</option>';
+			}	
 		}
+		
 		$a.='</select>';
 		$a.= '<select required name="tahun"><option></option>';
-		for ($i=(int)date('Y');$i>=1965;$i--) { 
-			$a.='<option>'.($i).'</option>';
+		if (isset($this->saved_post['tahun'])) {
+			for ($i=(int)date('Y');$i>=1965;$i--) { 
+				$a.='<option'.($this->saved_post['tahun']==$i?' selected':'').'>'.($i).'</option>';
+			}
+		} else {
+			for ($i=(int)date('Y');$i>=1965;$i--) { 
+				$a.='<option>'.($i).'</option>';
+			}
 		}
 		return $a.'</select>';
 	}
