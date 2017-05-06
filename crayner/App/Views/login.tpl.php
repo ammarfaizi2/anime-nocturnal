@@ -10,6 +10,7 @@ if (isset($_COOKIE['alert'])) {
 	<title>RedAngel Login</title>
 	<meta charset="UTF-8">
 	<meta property="og:title" content="Login">
+	<meta property="og:image" content="<?php print base_url().'/assets/img/bgm/1.jpg'; ?>">
 	<meta property="og:description" content="RedAngel Login">
   	<meta name="description" content="Login">
   	<meta name="keywords" content="RedAngel">
@@ -27,6 +28,7 @@ if (isset($_COOKIE['alert'])) {
 			background-image: <?php print 'url('.base_url().'/assets/img/bgm/1.jpg);';?>
 			background-color: #cccccc;
 			background-repeat: no-repeat;
+			background-attachment: fixed;
 			background-position: top; 
 		}
 	</style>
