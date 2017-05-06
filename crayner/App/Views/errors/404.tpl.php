@@ -22,6 +22,8 @@ $list = $list[rand(0,count($list)-1)];
 			font-size: 64px;
 		}
 	</style>
+	<meta property="og:title" content="404 Not Found !"/>
+	<meta property="og:description" content="404 Mboten kepanggih !"/>
 	<meta property="og:image" content="<?php print base_url().'/assets/img/'.($list).'.jpg'; ?>"/>
 </head>
 <body>
