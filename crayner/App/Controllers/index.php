@@ -23,6 +23,11 @@ class index extends Controller
     */
     public function index()
     {
-        $this->load->view('index');
+        $this->load->model('Login','login');
+        if ($this->login->login_status()) {
+            $this->load->view('home');
+        } else {
+            $this->load->view('login');
+        }
     }
 }
