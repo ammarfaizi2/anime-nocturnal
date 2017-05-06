@@ -55,6 +55,10 @@ class register extends Controller
         }
         die('end of action');
     }
+    public function success()
+    {
+        
+    }
     private function tanggal_lahir()
     {
         $a = '<select required name="tanggal"><option></option>';

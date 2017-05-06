@@ -42,6 +42,7 @@ class Controller extends CraynerCore
     public function error($code)
     {
         http_response_code($code);
+        $this->load->helper('url');
         $this->load->view('errors/'.$code);
         die;
     }
