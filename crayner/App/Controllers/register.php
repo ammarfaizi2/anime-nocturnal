@@ -42,7 +42,11 @@ class register extends Controller
 		$register = new \App\Models\Register();
 		$register->save_post();
 		if ($register->check_token()) {
-			
+			if ($register->validate_input()) {
+				$register->register_to_db();
+			} else {
+				$this->error_validate();
+			}
 		} else {
 			$this->error_token();
 		}
@@ -101,5 +105,9 @@ class register extends Controller
 		</body>
 		</html>
 		<?php
+	}
+	private function error_validate()
+	{
+		
 	}
 }
