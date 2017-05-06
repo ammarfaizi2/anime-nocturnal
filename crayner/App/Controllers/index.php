@@ -18,6 +18,7 @@ class index extends Controller
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('rstr');
+        $this->load->helper('teacrypt');
     }
     
     /**
