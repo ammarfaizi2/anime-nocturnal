@@ -10,6 +10,7 @@ class Register extends Model
 	/** 
 	*		Model constructor
 	*/
+	private $alert;
 	public function __construct()
 	{
 		parent::__construct();
@@ -54,12 +55,35 @@ class Register extends Model
 		$st = $this->db->prepare("SELECT COUNT(`{$field}`) FROM `{table}` WHERE `{$field}`=:{$field} LIMIT 1;");
 		$st->execute(array(':'.$field=>$value));
 		$dt = $st->fetch(PDO::FETCH_NUM);
-		return (bool)$dt;
+		return (bool)$dt[0];
+	}
+	private static function vtr($str)
+	{
+		return trim(strtolower($str));
 	}
 	public function validate_input()
 	{
-		$this->is_exists_on_db('')
+		if ($this->is_exists_on_db('account_data','username',self::vtr($_POST['username']))){
+			$this->alert = "Username sudah digunakan anggota lain !";
+			return false;
+		} else
+		if ($this->is_exists_on_db('account_data','email',self::vtr($_POST['email']))) {
+			$this->alert = "Email sudah digunakan anggota lain !";
+			return false;
+		} else
+		if ($this->is_exists_on_db('account_data','username',self::vtr($_POST['username']))) {
+			$this->alert = "Username sudah digunakan anggota lain !";
+			return false;
+		} else
+		if ($this->is_exists_on_db('account_info','phone',self::vtr($_POST['phone']))) {
+			$this->alert = "Nomor sudah digunakan anggota lain !";
+			return false;
+		}
 		return true;
+	}
+	public function get_alert()
+	{
+		return $this->alert;
 	}
 	private function generate_userid()
 	{	
