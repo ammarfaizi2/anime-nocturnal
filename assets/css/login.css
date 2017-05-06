@@ -28,12 +28,20 @@
 	color:#fff;
 	background-color:#34ACCA;
 	border: 3px solid #076F89;
+	border-radius: 5%;
 	padding: 3% 8% 3% 8%;
 	cursor: pointer;
 }
 #sbbt:hover{
 	color:#fff;
 	background-color:#0D3C48;
+	border: 3px solid #003F4C;
+	padding: 3% 8% 3% 8%;
+	cursor: pointer;
+}
+#sbbt:active{
+	color:#fff;
+	background-color:#021B20;
 	border: 3px solid #076F89;
 	padding: 3% 8% 3% 8%;
 	cursor: pointer;
