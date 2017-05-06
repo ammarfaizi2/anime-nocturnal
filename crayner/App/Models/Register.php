@@ -64,7 +64,7 @@ class Register extends Model
     }
     public function validate_input()
     {   
-        $username   = self::vtr($_POST['username']));
+        $username   = self::vtr($_POST['username']);
         $email      = self::vtr($_POST['email']);
         $phone      = self::vtr($_POST['phone']);
         if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
