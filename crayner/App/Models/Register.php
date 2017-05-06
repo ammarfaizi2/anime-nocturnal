@@ -63,17 +63,29 @@ class Register extends Model
         return trim(strtolower($str));
     }
     public function validate_input()
-    {
-        if ($this->is_exists_on_db('account_data', 'username', self::vtr($_POST['username']))) {
+    {   
+        $username   = self::vtr($_POST['username']));
+        $email      = self::vtr($_POST['email']);
+        $phone      = self::vtr($_POST['phone']);
+        if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+            $this->alert = "E-Mail salah !";
+            return false;
+        } else
+        if (strlen($username)<4) {
+            $this->alert = "Username terlalu pendek, minimal 4 digit !";
+            return false;
+        } else
+        if (strlen($username)>64) {
+            $this->alert = "Username terlalu panjang, maksimal 64 digit !";
+            return false;
+        } else
+        if ($this->is_exists_on_db('account_data', 'username', $username) {
             $this->alert = "Username sudah digunakan anggota lain !";
             return false;
-        } elseif ($this->is_exists_on_db('account_data', 'email', self::vtr($_POST['email']))) {
+        } elseif ($this->is_exists_on_db('account_data', 'email', $email)) {
             $this->alert = "Email sudah digunakan anggota lain !";
             return false;
-        } elseif ($this->is_exists_on_db('account_data', 'username', self::vtr($_POST['username']))) {
-            $this->alert = "Username sudah digunakan anggota lain !";
-            return false;
-        } elseif ($this->is_exists_on_db('account_info', 'phone', self::vtr($_POST['phone']))) {
+        } elseif ($this->is_exists_on_db('account_info', 'phone', $phone)) {
             $this->alert = "Nomor sudah digunakan anggota lain !";
             return false;
         }
