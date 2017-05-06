@@ -11,7 +11,7 @@
 			<table class="tbf">
 				<thead>
 					<tr><th colspan="3"><h2>Pendaftaran RedAngel</h2></th></tr>
-				</thead>
+			<!--	</thead>
 				<tbody>
 					<tr><td>Nama Lengkap</td><td>:</td><td><input required type="text" name="nama"
 					></td></tr>
@@ -27,7 +27,7 @@
 					<tr><td>Username</td><td>:</td><td><input required type="text" name="username"></td></tr>
 					<tr><td>Password</td><td>:</td><td><input required type="password" name="password"></td></tr>
 					<tr><td>Konfirmasi Password</td><td>:</td><td><input required type="password" name="cpassword"></td></tr>
-				</tbody>
+				</tbody>-->
 				<tfoot>
 					<tr><td colspan="3"><div class="mgt"><input type="hidden" name="rgtoken" value="<?php print $rgtoken;?>"></div></td></tr>
 					<tr><th colspan="3"><input type="submit" name="register" value="Daftar"></th></tr>

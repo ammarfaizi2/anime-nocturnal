@@ -37,7 +37,12 @@ class register extends Controller
 	}
 	public function action()
 	{
-		
+		$register = new \App\Models\Register();
+		if ($register->check_token()) {
+			
+		} else {
+			header("location:".base_url().'/register?ref=err_token');
+		}
 	}
 	private function tanggal_lahir()
 	{
