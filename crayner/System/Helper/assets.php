@@ -10,6 +10,6 @@ if (!function_exists('js')) {
 if (!function_exists('css')) {
     function css($file, $abs=false)
     {
-        print '<link rel="stylesheet" type="text/css" href="'.(ConfigHandler::iq()->assets('css')).'/'.($abs?$file:$file.'.css').'">'."\n";
+        print '<link rel="stylesheet" type="text/css" href="'.(ConfigHandler::iq()->assets('css')).'/'.($abs?$file:$file.'.css').'?t='.time().'">'."\n";
     }
 }
