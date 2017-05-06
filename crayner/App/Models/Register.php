@@ -76,15 +76,10 @@ class Register extends Model
         } elseif (strlen($username)>64) {
             $this->alert = "Username terlalu panjang, maksimal 64 digit !";
             return false;
-        } else
-        if ($_POST['password']!=$_POST['cpassword']) {
+        } elseif ($_POST['password']!=$_POST['cpassword']) {
             $this->alert = "Konfirmasi Password tidak sama !";
             return false;
-        }
-
-
-
-        elseif ($this->is_exists_on_db('account_data', 'username', $username)) {
+        } elseif ($this->is_exists_on_db('account_data', 'username', $username)) {
             $this->alert = "Username sudah digunakan anggota lain !";
             return false;
         } elseif ($this->is_exists_on_db('account_data', 'email', $email)) {
