@@ -12,8 +12,8 @@ if (!function_exists('stck')) {
 if (!function_exists('rmck')) {
     function rmck($ck)
     {
-        foreach ($ck as $key => $value) {
-            $st[] = setcookie($key, null, 0);
+        foreach ($ck as $val) {
+            $st[] = setcookie($val, null, 0);
         }
         return $st;
     }

@@ -36,7 +36,9 @@ class login extends Controller
                 if ($login->check_token()) {
                     if ($login->check_login()) {
                         header('location:'.base_url().'/home?ref=login');
-                        die;
+                    } else {
+                        stck(array('alert'=>array(teacrypt('Username atau Password salah !', 'redangel'),300)));
+                        header('location:'.base_url().'/login?ref=err_login');
                     }
                 } else {
                     $this->error_token();
