@@ -1,5 +1,5 @@
 <?php
-namespace System\Library\Encryption;
+namespace System\Library\WhiteHat\Encryption;
 
 class Teacrypt
 {

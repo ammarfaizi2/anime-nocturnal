@@ -1,5 +1,5 @@
 <?php
-defined('BASEURL') or define('BASEURL', 'http://localhost:8000');
+defined('BASEURL') or define('BASEURL', 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['HTTP_HOST']);
 
 $cf = array(
 

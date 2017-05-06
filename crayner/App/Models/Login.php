@@ -17,7 +17,14 @@ class Login extends Model
     }
     public function token()
     {
-         rstr();
+        $token	= rstr(64);
+        $key	= rstr(32);
+        $enctk	= teacrypt($token,$key);
+        stck(array(
+        		'token'	=>	array($enctk,1200),
+        		'key'	=>	array(teacrypt($key,'redangel'))
+        	));
+        return $token;
     }
     public function login_status()
     {
