@@ -17,6 +17,7 @@ class login extends Controller
 		parent::__construct();
         $this->load->helper('url');
         $this->load->helper('rstr');
+        $this->load->helper('assets');
         $this->load->helper('teacrypt');
         $this->load->helper('cookiemgr');
 	}

@@ -29,7 +29,7 @@
 					<tr><td>Konfirmasi Password</td><td>:</td><td><input required type="password" name="cpassword"></td></tr>
 				</tbody>
 				<tfoot>
-					<tr><td colspan="3"><div class="mgt"></div></td></tr>
+					<tr><td colspan="3"><div class="mgt"><input type="hidden" name="rgtoken" value="<?php print $rgtoken;?>"></div></td></tr>
 					<tr><th colspan="3"><input type="submit" name="register" value="Daftar"></th></tr>
 				</tfoot>
 			</table>

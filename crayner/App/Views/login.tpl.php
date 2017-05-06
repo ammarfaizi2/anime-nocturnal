@@ -2,20 +2,7 @@
 <html>
 <head>
 	<title>Login</title>
-	<style type="text/css">
-		.cg2{
-			margin-top: 3%;
-		}
-		.lin{
-			margin-top: 2%;
-		}
-		.in{
-			margin-top: 0.5%;
-		}
-		.insb{
-			margin-top: 2%;
-		}
-	</style>
+	<?php css('login'); ?>
 </head>
 <body>
 <center>

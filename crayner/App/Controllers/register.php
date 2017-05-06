@@ -34,7 +34,10 @@ class register extends Controller
          	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir()));
         }
 	}
-
+	public function action()
+	{
+		
+	}
 	private function tanggal_lahir()
 	{
 		$a = '<select required name="tanggal"><option></option>';
