@@ -57,6 +57,9 @@ class Login extends Model
 					'ukey'	=>array(teacrypt($r['ukey'],'redangel'),$exp),
 					'sess'	=>array(teacrypt($sess,$r['ukey']),$exp)
 				));	
+	    	return true;
+    	} else {
+    		return false;
     	}
     }
 
