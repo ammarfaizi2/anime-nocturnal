@@ -21,10 +21,17 @@ class Login extends Model
         $key	= rstr(32);
         $enctk	= teacrypt($token,$key);
         stck(array(
-        		'token'	=>	array($enctk,1200),
-        		'key'	=>	array(teacrypt($key,'redangel'))
+        		'lgtoken'	=>	array($enctk,1200),
+        		'lgkey'	=>	array(teacrypt($key,'redangel'))
         	));
         return $token;
+    }
+    public function check_token()
+    {
+    	if (isset($_COOKIE['lgtoken'],$_COOKIE['lgkey'],$_POST['lgtoken']) && teadecrypt($_COOKIE['lgtoken'],teadecrypt($_COOKIE['lgkey'],'redangel'))==$_POST['lgtoken']) {
+    		return true;
+    	}
+    	return false;
     }
     public function login_status()
     {

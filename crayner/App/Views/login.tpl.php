@@ -34,7 +34,7 @@
 			<input type="password" name="password">
 		</div>
 		<div class="insb">
-			<input type="hidden" name="token" value="<?php print $token; ?>">
+			<input type="hidden" name="lgtoken" value="<?php print $token; ?>">
 			<input type="submit" name="login" value="Login">
 		</div>
 	</div>
