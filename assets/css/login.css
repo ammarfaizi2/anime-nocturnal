@@ -12,21 +12,25 @@
 	margin-top: 8%;
 }
 .cgu{
-	max-width: 30%;
-	max-height: 70%;
-	margin-top: 4%;	
+	width: 400px;
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 10%;	
 	border: 4px solid #22639C;
 	border-radius: 3%;
-	padding-bottom: 4%;
+	padding-bottom: 15%;
 	padding-top: 1%;
 	background-color: #D5F3C9;
 }
 .htr{
 	font-family: Arial;
 	font-weight: bold;
-	font-size: 155%;
+	font-size: 165%;
 }
 #sbbt{
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 105%;
 	color:#fff;
 	background-color:#34ACCA;
 	border: 3px solid #076F89;
