@@ -10,3 +10,17 @@
 .insb{
 	margin-top: 2%;
 }
+.cgu{
+	max-width: 30%;
+	max-height: 70%;
+	margin-top: 4%;	
+	border: 2px solid black;
+	border-radius: 1%;
+	padding-bottom: 4%;
+	padding-top: 1%;
+}
+.htr{
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 145%;
+}

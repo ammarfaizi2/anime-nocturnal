@@ -3,11 +3,14 @@
 <head>
 	<title>Login</title>
 	<?php css('login'); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <center>
+<div class="cgu">
 <form action="<?php print base_url().'/login'; ?>" method="post">
 	<div class="cg2">
+		<div class="htr"><h3>Login</h3></div>
 		<div class="lin">
 			<label>Username :</label>
 		</div>
@@ -26,6 +29,7 @@
 		</div>
 	</div>
 </form>
+</div>
 </center>
 </body>
 </html>
