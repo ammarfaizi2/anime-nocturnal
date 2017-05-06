@@ -33,7 +33,8 @@ class login extends Controller
         	if (isset($_POST['login'])) {
         		if($login->check_token())	{
         			if($login->check_login()){
-        				
+        				header('location:'.base_url().'/home?ref=login');
+        				die;
         			}
         		} else {
         			$this->error_token();
