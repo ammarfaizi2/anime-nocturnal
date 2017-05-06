@@ -1,7 +1,7 @@
 <?php 
 if (isset($_COOKIE['alert'])) {
-	$al = teadecrypt($_COOKIE['alert'],'redangel');
-	rmck(array('alert'));
+    $al = teadecrypt($_COOKIE['alert'], 'redangel');
+    rmck(array('alert'));
 }
 ?>
 <!DOCTYPE html>
@@ -12,11 +12,12 @@ $v = function ($vz, $q=0) use ($ps) {
     print ($q==1 and isset($ps[$vz])) ? $ps[$vz] : (isset($ps[$vz])?' value="'.$ps[$vz].'" ':'');
 };
 if (isset($al)) {
-	?>
+    ?>
 	<script type="text/javascript">
-	alert('<?php print $al;?>');
+	alert('<?php print $al; ?>');
 	</script>
 	<?php
+
 }
 ?>
 	<title>Register</title>
