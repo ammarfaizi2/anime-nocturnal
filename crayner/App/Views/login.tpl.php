@@ -22,10 +22,18 @@ if (isset($_COOKIE['alert'])) {
 	alert('<?php print $al; ?>');
 	</script>
 	<?php } ?>
+	<style type="text/css">
+		body{
+			background-image: <?php print 'url('.base_url().'/assets/img/bgm/1.jpg);';?>
+			background-color: #cccccc;
+			background-repeat: no-repeat;
+			background-position: top; 
+		}
+	</style>
 </head>
 <body>
 <center>
-<div class="cgu">
+<div class="cgu" onmouseenter="ticker();" id="dg">
 <form action="<?php print base_url().'/login'; ?>" method="post">
 	<div class="cg2">
 		<div class="htr"><h3>Login</h3></div>
