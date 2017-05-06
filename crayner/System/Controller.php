@@ -39,4 +39,9 @@ class Controller extends CraynerCore
     {
         require __DIR__.'/Helper/'.$helper.'.php';
     }
+    public function error($code)
+    {
+        http_response_code($code);
+        $this->load->view('errors/'.$code);
+    }
 }

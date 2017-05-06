@@ -51,6 +51,10 @@ class Crayner extends CraynerCore
     public function run()
     {
         $class = "App\\Controllers\\{$this->class}";
-        $class = ((new $class())->{"{$this->method}"}());
+        if(is_callable(array($class, $this->method))) {
+            $class = ((new $class())->{"{$this->method}"}());
+        } else {
+            (new \System\Controller())->error(404);
+        }
     }
 }
