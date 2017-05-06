@@ -22,7 +22,7 @@
 <body>
 <center>
 <?php
-$list = array('asuna2','asuna3','bg1');
+$list = array('asuna2','asuna3','bg1','bg2','bg3');
 ?>
 <a href="<?php print base_url(); ?>"><h2>Halaman Utama</h2></a>
 <h1 class="hi">404 Not Found !</h1>
