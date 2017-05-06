@@ -1,5 +1,5 @@
 <?php
-defined('BASEURL') or define('BASEURL', 'http://localhost');
+defined('BASEURL') or define('BASEURL', 'http://localhost:8000');
 
 $cf = array(
 

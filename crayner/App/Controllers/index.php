@@ -28,7 +28,7 @@ class index extends Controller
         if ($this->login->login_status()) {
             $this->load->view('home');
         } else {
-            $this->load->view('login');
+            $this->load->view('login',array('token'=>$this->login->token()));
         }
     }
 }

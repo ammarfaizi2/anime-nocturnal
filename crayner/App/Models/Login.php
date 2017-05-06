@@ -14,7 +14,10 @@ class Login extends Model
 	{
 		parent::__construct();
 	}
-
+	public function token()
+	{
+		
+	}
 	public function login_status()
 	{
 		return false;
