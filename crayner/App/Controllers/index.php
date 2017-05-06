@@ -16,6 +16,7 @@ class index extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
     }
     
     /**
