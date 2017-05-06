@@ -13,6 +13,10 @@ class Database
     {
         $this->_db = new \PDO($cf['driver'].':host='.$cf['host'].';dbname='.$cf['dbname'], $cf['user'], $cf['pass']);
     }
+    public function prepare($statement)
+    {
+        return $this->_db->prepare($statement);
+    }
     public function query($q)
     {
         $st = $this->_db->prepare($q);
