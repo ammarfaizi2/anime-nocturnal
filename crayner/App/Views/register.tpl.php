@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title>Register</title>
+	<?php print css('register'); ?>
 	<style type="text/css">
 		body{
 			font-family: Tahoma;
 		}
 		.fcg{
-
+			max-width: 40%;
+			max-width: 50%;
+			border: 2px solid orange;
 		}
 		.tbf{
 			margin: 3%;
