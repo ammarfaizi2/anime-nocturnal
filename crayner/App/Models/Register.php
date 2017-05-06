@@ -85,12 +85,9 @@ class Register extends Model
     }
     private function generate_userid()
     {
-        $st = $this->db->prepare("SELECT COUNT(`userid`) FROM `account_data` WHERE `userid`=:userid LIMIT 1;");
         do {
             $userid = rand(1,9).rstr(15, null, '1234567890');
-            $st->execute(array(':userid'=>$userid));
-            $dt = $st->fetch(\PDO::FETCH_NUM);
-        } while ((bool)$dt[0]);
+        } while ($this->is_exists_on_db('account_data', 'userid', $userid);
         return $userid;
     }
     public function register_to_db()
