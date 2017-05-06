@@ -49,9 +49,16 @@ class Register extends Model
 		}
 		return array();
 	}
+	public function is_exists_on_db($table,$field,$value)
+	{
+		$st = $this->db->prepare("SELECT COUNT(`{$field}`) FROM `{table}` WHERE `{$field}`=:{$field} LIMIT 1;");
+		$st->execute(array(':'.$field=>$value));
+		$dt = $st->fetch(PDO::FETCH_NUM);
+		return (bool)$dt;
+	}
 	public function validate_input()
 	{
-		$st = $this->db->prepare("SELECT COUNT(`userid`) FROM `account_data` WHERE `userid`=:userid LIMIT 1;");
+		$this->is_exists_on_db('')
 		return true;
 	}
 	private function generate_userid()
