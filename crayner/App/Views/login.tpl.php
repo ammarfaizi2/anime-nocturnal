@@ -15,17 +15,17 @@
 			<label>Username :</label>
 		</div>
 		<div class="in">
-			<input type="text" name="username">
+			<input type="text" required name="username">
 		</div>
 		<div class="lin">
 			<label>Password :</label>
 		</div>
 		<div class="in">
-			<input type="password" name="password">
+			<input type="password" required name="password">
 		</div>
 		<div class="insb">
 			<input type="hidden" name="lgtoken" value="<?php print $token; ?>">
-			<input type="submit" name="login" value="Login">
+			<input type="submit" name="login" value="Login" id="sbbt">
 		</div>
 	</div>
 </form>

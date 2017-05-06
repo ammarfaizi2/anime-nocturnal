@@ -2,13 +2,13 @@
 	margin-top: 3%;
 }
 .lin{
-	margin-top: 2%;
+	margin-top: 6%;
 }
 .in{
 	margin-top: 0.5%;
 }
 .insb{
-	margin-top: 2%;
+	margin-top: 8%;
 }
 .cgu{
 	max-width: 30%;
@@ -22,5 +22,19 @@
 .htr{
 	font-family: Arial;
 	font-weight: bold;
-	font-size: 145%;
+	font-size: 155%;
+}
+#sbbt{
+	color:#fff;
+	background-color:#34ACCA;
+	border: 3px solid #076F89;
+	padding: 3% 8% 3% 8%;
+	cursor: pointer;
+}
+#sbbt:hover{
+	color:#fff;
+	background-color:#0D3C48;
+	border: 3px solid #076F89;
+	padding: 3% 8% 3% 8%;
+	cursor: pointer;
 }
