@@ -3,27 +3,6 @@
 <head>
 	<title>Register</title>
 	<?php print css('register'); ?>
-	<style type="text/css">
-		body{
-			font-family: Tahoma;
-		}
-		.fcg{
-			max-width: 40%;
-			max-width: 50%;
-			border: 2px solid orange;
-		}
-		.tbf{
-			margin: 3%;
-			border: 3px solid black;
-			padding: 3% 7% 7% 7%;
-		}
-		.tbd{
-			margin-top: 4%;
-		}
-		.mgt{
-			margin-top: 3%;
-		}
-	</style>
 </head>
 <body>
 <center>
