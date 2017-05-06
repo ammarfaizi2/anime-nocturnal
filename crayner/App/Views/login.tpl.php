@@ -3,6 +3,7 @@
 <head>
 	<title>Login</title>
 	<?php css('login'); ?>
+	<?php js('login'); ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

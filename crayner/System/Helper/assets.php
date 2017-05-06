@@ -4,7 +4,7 @@ use System\ConfigHandler;
 if (!function_exists('js')) {
     function js($file, $abs=false)
     {
-        print '<script type="text/javascript" src="'.(ConfigHandler::iq()->assets('js')).'/'.($abs?$file:$file.'.js').'">'."\n";
+        print '<script type="text/javascript" src="'.(ConfigHandler::iq()->assets('js')).'/'.($abs?$file:$file.'.js').'?t='.time().'"></script>'."\n";
     }
 }
 if (!function_exists('css')) {
