@@ -31,7 +31,8 @@ class register extends Controller
         if ($login->login_status()) {
             $this->load->error(404);
         } else {
-         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir()));
+        	$register = new \App\Models\Register();
+         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token()));
         }
 	}
 	public function action()
