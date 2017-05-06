@@ -23,7 +23,7 @@ class Login extends Model
         $enctk	= teacrypt($token,$key);
         stck(array(
         		'lgtoken'	=>	array($enctk,1200),
-        		'lgkey'	=>	array(teacrypt($key,'redangel'))
+        		'lgkey'		=>	array(teacrypt($key,'redangel'))
         	));
         return $token;
     }
