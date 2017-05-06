@@ -34,9 +34,9 @@
 	font-family: Arial;
 	font-size: 105%;
 	color:#fff;
-	background-color:#34ACCA;
+	background-color:#347888;
 	border: 3px solid #076F89;
-	border-radius: 5%;
+	border-radius: 7%;
 	padding: 3% 8% 3% 8%;
 	cursor: pointer;
 }
@@ -53,12 +53,4 @@
 	border: 3px solid #076F89;
 	padding: 3% 8% 3% 8%;
 	cursor: pointer;
-}
-input[type=text]{
-	padding-left: 10%;
-	padding-right: 10%;
-}
-input[type=password]{
-	padding-left: 10%;
-	padding-right: 10%;
 }

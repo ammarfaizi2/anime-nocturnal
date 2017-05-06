@@ -43,13 +43,13 @@ if (isset($_COOKIE['alert'])) {
 			<label>Username :</label>
 		</div>
 		<div class="in">
-			<input type="text" required name="username">
+			<input type="text" required name="username" size="28">
 		</div>
 		<div class="lin">
 			<label>Password :</label>
 		</div>
 		<div class="in">
-			<input type="password" required name="password">
+			<input type="password" required name="password" size="28">
 		</div>
 		<div class="insb">
 			<input type="hidden" name="lgtoken" value="<?php print $token; ?>">
