@@ -33,7 +33,7 @@ class register extends Controller
         } else {
         	unset($login);
         	$register = new \App\Models\Register();
-         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token()));
+         	$this->load->view('register',array('tanggal_lahir'=>$this->tanggal_lahir(),'rgtoken'=>$register->token(),'ps'=>$register->get_saved_post()));
         }
 	}
 	public function action()
