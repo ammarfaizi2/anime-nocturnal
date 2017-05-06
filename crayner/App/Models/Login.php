@@ -42,15 +42,19 @@ class Login extends Model
     			':user'=>$_POST['username']
     		));
     	$r = $st->fetch(\PDO::FETCH_ASSOC);
-    	var_dump($r);
-
-    	die;
-    	$exp = 3600*24*14;
-    	stck(array(
-				'id'	=>array($r['userid'],$exp),
-				'sess'	=>array($sess,$exp),
-				''
-			));
+    	if (teadecrypt($r['password'],$r['ukey'])==$_POST['password']) {
+    		print 'pass sukses';
+    		die;
+    	}
+    	$sess = rstr().$r['userid'];
+    	if ($r) {
+    		$exp = 3600*24*14;
+	    	stck(array(
+					'id'	=>array($r['userid'],$exp),
+					'ukey'	=>array(teacrypt($r['ukey'],'redangel'),$exp),
+					'sess'	=>array(teacrypt($sess,$r['ukey']),$exp)
+				));	
+    	}
     }
 
     public function login_status()
