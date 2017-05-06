@@ -46,7 +46,7 @@ class register extends Controller
             if ($register->validate_input()) {
                 $register->register_to_db();
             } else {
-                $this->error_validate();
+                stck(array('alert'=>array(teacrypt($this->get_alert(),'redangel'),300)));
             }
         } else {
             $this->error_token();
