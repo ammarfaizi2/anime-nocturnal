@@ -6,29 +6,33 @@ body {
 	display: flex;
 	flex-flow: column;
   	height: 100%;
-}
-.box .row {
-  border: 1px solid grey;
+  	font-family: Helvetica, Arial, sans-serif;
 }
 .box .row.header {
 	flex-grow: 0,
 	flex-shrink: 1,
 	flex-basis: auto;
 }
-.box .row.content {
-  flex: 1 1 auto;
-}
-.box .row.footer {
-  flex: 0 1 40px;
-}
 .bt{
 	position: relative;
 	display: inline-block;
-	background-color:red;
+	background-color: #3B5998;
 	padding: 1% 1% 1% 1%;
+	color:#fff;
+}
+.bt:hover{
+	background-color: #355089;
 }
 .inbx{
+	padding: 0.5% 0% 0.5% 0%;
 	float: right;
-	border: 3px solid black;
-	min-width: 100%;
+	text-align: right;
+    width: 22%;
+    position: absolute;
+    right: 0px;
+    background-color: #3B5998;
+    min-width: 100%;
+}
+.scbt{
+	margin-right: 16%;
 }
