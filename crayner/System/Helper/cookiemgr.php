@@ -14,8 +14,10 @@ if (!function_exists('stck')) {
 if (!function_exists('rmck')) {
     function rmck($ck)
     {
+        $domain = (strpos($_SERVER['HTTP_HOST'], 'localhost')===false) ? $_SERVER['HTTP_HOST'] : false;
+        $https = isset($_SERVER['HTTPS']);
         foreach ($ck as $val) {
-            $st[] = setcookie($val, null, 0);
+            $st[] = setcookie($val, null, 0, '/', $domain, $https);
         }
         return $st;
     }
