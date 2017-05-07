@@ -30,7 +30,8 @@ class index extends Controller
     {
         $login = new \App\Models\Login();
         if ($login->login_status()) {
-            $this->load->view('home');
+            unset($login);
+            (new \App\Controllers\home())->index();
         } else {
             $this->load->view('login', array('token'=>$login->token()));
         }

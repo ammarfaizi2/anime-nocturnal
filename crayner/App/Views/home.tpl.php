@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<h1>ini home</h1>
+<?php
+$l->load->view('static/header',array('title'=>'RedAngel'));
+?>	
 </body>
 </html>
