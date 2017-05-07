@@ -2,10 +2,11 @@
 if (!function_exists('stck')) {
     function stck($ck)
     {
-        $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
+        $domain = (strpos($_SERVER['HTTP_HOST'], 'localhost')===false) ? $_SERVER['HTTP_HOST'] : false;
+        $https = isset($_SERVER['HTTPS']);
         $now = time();
         foreach ($ck as $key => $val) {
-            $st[] = setcookie($key, $val[0], $now+(int)(isset($val[1])?$val[1]:3600), '/', $domain, false);
+            $st[] = setcookie($key, $val[0], $now+(int)(isset($val[1])?$val[1]:3600), '/', $domain, $https);
         }
         return $st;
     }
