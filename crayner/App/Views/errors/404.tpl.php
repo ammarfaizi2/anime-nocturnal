@@ -1,6 +1,6 @@
 <?php
 $list = array('asuna2','asuna3','bg1','bg3');
-$list = $list[rand(0,count($list)-1)];
+$list = $list[rand(0, count($list)-1)];
 ?>
 <!DOCTYPE html>
 <html>

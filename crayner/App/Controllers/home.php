@@ -32,7 +32,7 @@ class home extends Controller
         if ($login->login_status()) {
             $user = new \App\Models\User();
             $udt = $user->get_user_data($_COOKIE['id']);
-            $this->load->view('home',array('u'=>$udt,'l'=>$this));
+            $this->load->view('home', array('u'=>$udt,'l'=>$this));
         } else {
             header('location:'.base_url().'/login?ref=home');
         }

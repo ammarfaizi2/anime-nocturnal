@@ -57,7 +57,6 @@ class register extends Controller
     }
     public function success()
     {
-        
     }
     private function tanggal_lahir()
     {

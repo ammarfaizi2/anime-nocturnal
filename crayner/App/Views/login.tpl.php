@@ -18,11 +18,13 @@ if (isset($_COOKIE['alert'])) {
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<?php css('login'); ?>
 	<?php js('login'); ?>
-  	<?php if (isset($al)) { ?>
+  	<?php if (isset($al)) {
+    ?>
 	<script type="text/javascript">
 	alert('<?php print $al; ?>');
 	</script>
-	<?php } ?>
+	<?php 
+} ?>
 	<style type="text/css">
 		body{
 			background-image: <?php print 'url('.base_url().'/assets/img/bgm/1.jpg);';?>
