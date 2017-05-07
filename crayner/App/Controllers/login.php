@@ -32,7 +32,10 @@ class login extends Controller
         if ($login->login_status()) {
             header('location:'.base_url().'/home?ref=login');
         } else {
-            if (isset($_POST['login'])) {
+            if (isset($_POST['login']) && isset($_POST['username'])) {
+                stck(array(
+                    'lgsr'=>array(teacrypt($_POST['username'], 'redangel'),strtotime('+7days'))
+                ));
                 if ($login->check_token()) {
                     if ($login->check_login()) {
                         header('location:'.base_url().'/home?ref=login');
@@ -48,9 +51,6 @@ class login extends Controller
             $this->load->view('login', array('token'=>$login->token()));
         }
     }
-
-
-
 
 
     private function error_token()
