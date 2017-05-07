@@ -45,7 +45,7 @@ if (isset($_COOKIE['alert'])) {
 			<label>Username :</label>
 		</div>
 		<div class="in">
-			<input type="text" required name="username" size="28">
+			<input type="text" required name="username"<?php print $c_user;# ? $c_user : ''; ?> size="28">
 		</div>
 		<div class="lin">
 			<label>Password :</label>

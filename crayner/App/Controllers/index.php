@@ -33,7 +33,7 @@ class index extends Controller
             unset($login);
             (new \App\Controllers\home())->index();
         } else {
-            $this->load->view('login', array('token'=>$login->token()));
+            $this->load->view('login', array('token'=>$login->token(),'c_user'   =>(isset($_COOKIE['lgsr']) ? teadecrypt($_COOKIE['lgsr'],'redangel') : '')));
         }
     }
 }
