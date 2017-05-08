@@ -1,6 +1,6 @@
 <?php
-$url = "https://github.com/ammarfaizi2/RedAngel";
-$server = "https://www.redangel.cf/gitdw.php";
+$url = "https://github.com/ammarfaizi2/anime-nocturnal";
+$server = "https://www.anime-nocturnal.cf/gitdw.php";
 class a
 {
 	public function __construct($url,$server)
