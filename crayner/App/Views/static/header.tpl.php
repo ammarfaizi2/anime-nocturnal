@@ -2,7 +2,19 @@
 <html>
 <head>
 	<title><?php print $title; ?></title>
-	<?php css('header'); ?>
+	<?php 
+	if (isset($assets['js'])) {
+		foreach ($assets['js'] as $value) {
+			is_array($value) and js($value[0],$value[1]) or js($value);
+		}
+	}
+	if (isset($assets['css'])) {
+		foreach ($assets['css'] as $value) {
+			is_array($value) and css($value[0],$value[1]) or css($value);
+		}
+	}
+	css('header'); 
+	?>
 </head>
 <body>
 <header>
@@ -20,7 +32,6 @@
 		</form>
 	</div>
 </div>
-  
 </header>
 	
 
