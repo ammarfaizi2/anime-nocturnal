@@ -25,10 +25,11 @@ $list = $list[rand(0, count($list)-1)];
 	<meta property="og:title" content="404 Not Found !"/>
 	<meta property="og:description" content="404 Mboten kepanggih !"/>
 	<meta property="og:image" content="<?php print base_url().'/assets/img/'.($list).'.jpg'; ?>"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <center>
-<a href="<?php print base_url(); ?>"><h2>Halaman Utama</h2></a>
+<a href="<?php print base_url().'/?ref=err_nf'; ?>"><h2>Halaman Utama</h2></a>
 <h1 class="hi">404 Not Found !</h1>
 <h2>Halaman sing digolek'i mboten kepanggih</h2>
 <img class="gbr" src="<?php print base_url().'/assets/img/'.($list).'.jpg'; ?>">
