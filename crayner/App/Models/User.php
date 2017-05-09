@@ -16,9 +16,9 @@ class User extends Model
         parent::__construct();
         parent::db();
     }
-    public function get_user_data($id)
+    public function get_user_data($id,$by="userid")
     {
-        $st = $this->db->prepare("SELECT `a`.`username`,`a`.`email`,`a`.`ukey`,`a`.`authority`,`b`.`nama`,`b`.`tmplahir`,`b`.`tgllahir`,`b`.`alamat` FROM `account_data` AS `a` INNER JOIN `account_info` AS `b` ON `a`.`userid`=`b`.`userid` WHERE `a`.`userid`=:id LIMIT 1;");
+        $st = $this->db->prepare("SELECT `a`.`username`,`a`.`email`,`a`.`ukey`,`a`.`authority`,`b`.`nama`,`b`.`tmplahir`,`b`.`tgllahir`,`b`.`alamat` FROM `account_data` AS `a` INNER JOIN `account_info` AS `b` ON `a`.`userid`=`b`.`userid` WHERE `a`.`{$by}`=:id LIMIT 1;");
         $st->execute(array(':id'=>$id));
         return $st->fetch(\PDO::FETCH_ASSOC);
     }

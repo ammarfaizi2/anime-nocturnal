@@ -27,10 +27,35 @@ class profile extends Controller
 	*/
 	public function index()
 	{
-		
+		$login = new \App\Models\Login();
+        if ($login->login_status()) {
+            $user = new \App\Models\User();
+            $udt = $user->get_user_data($_COOKIE['id']);
+            if ($udt===false) {
+            	$this->load->error(404);
+            } else {
+            	$this->load->view('profile',array('l'=>$this,'u'=>$udt));
+            }
+        } else {
+            $this->load->error(404);
+        }
+        die;
 	}
 	public function __call($name, $arg=null)
     {
-        # disini mau dibikin panggil data user
+    	$login = new \App\Models\Login();
+        if ($login->login_status()) {
+            $user = new \App\Models\User();
+            $udt = $user->get_user_data($name,'username');
+            if ($udt===false) {
+            	$this->load->error(404);
+            } else {
+            	$this->load->view('profile',array('l'=>$this,'u'=>$udt));
+            }
+        } else {
+            header('location:'.base_url().'/login?ref=home');
+        }
+        die;
     }
 }
+
